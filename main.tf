@@ -10,8 +10,8 @@ resource "aws_s3_bucket" "default" {
 
 # Block direct public access
 resource "aws_s3_bucket_public_access_block" "default" {
-  bucket = aws_s3_bucket.default.id
-
+  bucket                  = aws_s3_bucket.default.id
+  ignore_public_acls      = true
   block_public_acls       = true
   block_public_policy     = true
   restrict_public_buckets = true
