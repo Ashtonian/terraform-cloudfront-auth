@@ -174,8 +174,6 @@ locals {
   name = replace(var.name, ".", "-")
 }
 resource "aws_lambda_function" "default" {
-  provider = aws.us-east-1
-
   function_name    = "${local.name}-auth"
   description      = "${var.name}-auth"
   runtime          = "nodejs14.x"
